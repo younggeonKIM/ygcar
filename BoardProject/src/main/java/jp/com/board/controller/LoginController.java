@@ -26,17 +26,10 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="./loginvalidate", method=RequestMethod.POST)
-	public ModelAndView LoginValidate(BindingResult br, UserLoginModel userLoginModel) {
-		String id = userLoginModel.getId();
-		String pwd = userLoginModel.getPwd();
+	public ModelAndView LoginValidate(HttpSession ss, UserLoginModel userLoginModel) {
 		
 		ModelAndView mav = new ModelAndView();
-		if(id != null && pwd != null) {
-			mav.addObject("msg", "ログイン成功！");
-			
-		} else {
-			mav.addObject("msg", "ログイン失敗！");
-		}
+		mav.addObject(ss);
 		Login();
 		mav.setViewName("loginView");
 		return mav;
