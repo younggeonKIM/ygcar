@@ -5,7 +5,7 @@
 <html>
 <head>
 	<title>Home</title>
-<link rel="stylesheet" type="text/css" href="../css/carsytle.css">
+<link rel="stylesheet" type="text/css" href="../css/carstyle.css">
 </head>
 <%@ include file="/WEB-INF/views/menu_header.jsp" %>
 <body>
