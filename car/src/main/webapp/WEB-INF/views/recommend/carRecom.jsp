@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="">
+<link rel="stylesheet" type="text/css" href="../../css/carstyle.css">
 </head>
 <%@ include file="/WEB-INF/views/menu_header.jsp" %>
 <body>

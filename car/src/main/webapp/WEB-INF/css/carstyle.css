@@ -1,0 +1,15 @@
+@charset "UTF-8";
+body {background-color: #e6e6fa; font-family: fantasy;}
+.carimgs section > .inner {width:1500px; margin:0 auto; padding-bottom:206px; box-sizing : border-box;}
+.carimgs .inner > div {width : calc((100%-45px)/4); margin-right:15px; background : #FFF; border-radius:10px;
+						display:inline-block; vertical-align:middle; font-size:18px; min-height:37px;}
+.carimgs .inner > div .inner {padding : 0 9 px; box-sizing:border-box;}
+.carimgs .inner > div .title {height:84px; font-size:30px; font-weight:bold; text-align:center;
+						box-sizing:border-box; border-bottom:1px dashed #cccccc; letter-spacing:-0.15em;
+						color:#5CB3FF; position:relative;}
+.carimgs .inner .hond_nvan .hondnvan_wrap {padding-top : 376px; background : url("../img/honda_nvan.jpg") no-repeat center top;
+						background-size:cover;}
+.carimgs .inner .toyota_prius .toyopri_wrap { padding-top : 376px; background:url("../img/toyota_prius.jpg") no-repeat center top; 
+							background-size : cover; }
+.carimgs .inner .nissan_serena .nissere_wrap { padding-top : 376px; background : url("../img/nissan_serena.jpg") no-repeat center top; 
+							background-size: cover; object-fit:cover;}
