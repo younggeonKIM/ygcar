@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 	<title>Home</title>
-<link rel="stylesheet" type="text/css" href="<c:url value='../../../css/carstyle.css'/>">
+<link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/carstyle.css'/>">
 </head>
 <%@ include file="/WEB-INF/views/menu_header.jsp" %>
 <body>
