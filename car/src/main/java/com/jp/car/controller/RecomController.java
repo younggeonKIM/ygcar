@@ -15,4 +15,16 @@ public class RecomController {
 		
 		return "/recommend/carRecom";
 	}
+	
+	@RequestMapping(value="/controller/recom/dome")
+	public String domesticRecom(Model model) {
+		
+		return "/recommend/domCarRecom";
+	}
+	
+	@RequestMapping(value="/controller/recom/forgn")
+	public String foreignRecom(Model model) {
+		
+		return "/recommend/forCarRecom";
+	}
 }

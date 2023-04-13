@@ -5,7 +5,7 @@
 <%@ page session="false" %>
 <html>
 <head>
-<spring:url value="/resources/css/carstyle.css" var="carCss"/>
+<spring:url value="/resources/css/carhome.css" var="carCss"/>
 <meta charset="UTF-8">
 	<title>Home</title>
 <link rel="stylesheet" type ="text/css" href="${carCss }">
@@ -20,7 +20,7 @@
 		<p>自動車のすべての情報が集まる車情報統合システムに来ました。<br/>
 		当システムではお客様におすすめの車情報や最近変わった交通法規などいろんな情報を提供しております。<br/>
 		自動車について詳しく知りたい方はぜひ当システムをご参考お願い致します。</p>
-		<img alt="" src="">
+		
 	</div>
 	<div class="carimgs">
 		<section>
