@@ -13,6 +13,6 @@ public class RecomController {
 	public String recom(Model model) {
 		
 		
-		return "./recommend/carRecom";
+		return "/recommend/carRecom";
 	}
 }
