@@ -15,8 +15,14 @@ public class DomCarRecomDaoImpl implements CarRecomDao {
 
 	@Override
 	public CarRecom findCarRecom(CarRecom cr) {
-		
-		return null;
+		CarRecom carFind = new CarRecom();
+		for(int i = 0; i<domList.size(); i++) {
+			if(cr.getAutoName().equals(domList.get(i).getAutoName()) && cr.getAutoMaker().equals(domList.get(i).getAutoMaker())) {
+				carFind = domList.get(i);
+				break;
+			}
+		}
+		return carFind;
 	}
 
 }
