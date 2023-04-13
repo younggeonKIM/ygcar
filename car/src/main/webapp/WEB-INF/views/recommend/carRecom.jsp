@@ -15,8 +15,8 @@
 	<h1>車種をお選びください！</h1>
 	<div align="center" class="tbl1">
 		<table>
-			<tr><th><a href="./recom/dome">国産車</a></th><td>HONDA</td><td>トヨタ</td><td>NISSAN</td><td>など…</td></tr>
-			<tr><th><a href="./recom/forgn">外車</a></th><td>BMW</td><td>ヒョンデ</td><td>MINI</td><td>など…</td></tr>
+			<tr><th><a href="/controller/recom/orign?org=dom">国産車</a></th><td>国産車の製造業者を検索</td></tr>
+			<tr><th><a href="/controller/recom/orign?org=for">外車</a></th><td>外車の製造業者を検索</td></tr>
 		</table>
 	</div>
 </body>

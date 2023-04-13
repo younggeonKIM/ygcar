@@ -10,6 +10,8 @@ public interface CarRecomDao {
 	
 	public void addCar(CarRecom cr);
 	public CarRecom findCarRecom (CarRecom cr);
-	public List<String> getAutoNam (CarRecom cr);
-	public List<String> getAutoNamByOrig (CarRecom cr);
+	public List<String> findAutoNam (CarRecom cr);
+	public List<String> findAutoNamByMakr (CarRecom cr);
+	public List<String> findAutoMakr (String origin);
+	
 }

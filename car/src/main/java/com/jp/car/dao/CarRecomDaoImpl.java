@@ -20,7 +20,8 @@ public class CarRecomDaoImpl implements CarRecomDao {
 	public CarRecom findCarRecom(CarRecom cr) {
 		CarRecom carFind = new CarRecom();
 		for(int i = 0; i<carList.size(); i++) {
-			if(cr.getAutoName().equals(carList.get(i).getAutoName()) && cr.getAutoMaker().equals(carList.get(i).getAutoMaker())) {
+			if(cr.getAutoName().equals(carList.get(i).getAutoName()) && 
+				cr.getAutoMaker().equals(carList.get(i).getAutoMaker())) {
 				carFind = carList.get(i);
 				break;
 			}
@@ -29,7 +30,7 @@ public class CarRecomDaoImpl implements CarRecomDao {
 	}
 
 	@Override
-	public List<String> getAutoNam(CarRecom cr) {
+	public List<String> findAutoNam(CarRecom cr) {
 		List<String> autoNameList = new ArrayList<String>();
 		
 		for(int i = 0 ; i<carList.size(); i++) {
@@ -42,16 +43,31 @@ public class CarRecomDaoImpl implements CarRecomDao {
 	}
 
 	@Override
-	public List<String> getAutoNamByOrig(CarRecom cr) {
-List<String> autoNameList = new ArrayList<String>();
+	public List<String> findAutoNamByMakr(CarRecom cr) {
+		List<String> autoNameList = new ArrayList<String>();
 		
 		for(int i = 0 ; i<carList.size(); i++) {
-			if(cr.getOrigin().equals(carList.get(i).getOrigin())){
+			if(cr.getAutoMaker().equals(carList.get(i).getAutoMaker())){
 				autoNameList.add(carList.get(i).getAutoName());
 			}
 		}
 		
 		return autoNameList;
 	}
+
+	@Override
+	public List<String> findAutoMakr(String org) {
+		List<String> autoMakrList = new ArrayList<String>();
+		
+		for(int i = 0 ; i<carList.size(); i++) {
+			if(org.equals(carList.get(i).getOrigin())){
+				autoMakrList.add(carList.get(i).getAutoName());
+			}
+		}
+		
+		return autoMakrList;
+	}
+
+	
 
 }
