@@ -12,11 +12,14 @@
 </head>
 <%@ include file="/WEB-INF/views/menu_header.jsp" %>
 <body>
-	<h1>国産車の全種類を見ることができます</h1>
-	<div align="center" class="tbl1">
-		<table>
+	<h1>全種類のくるまを見ることができます</h1>
+		<div align="center" class="tbl1">
+			<form:form action="/controller/recom" method="post" modelAttribute="carrecom">
+				<table>
+					<tr><th>
+				</table>
+			</form:form>
 			
-		</table>
-	</div>
+		</div>
 </body>
 </html>

@@ -3,6 +3,8 @@ package com.jp.car.model;
 public class CarRecom {
 	private String autoName;
 	private String autoMaker; //製造業者
+	private String origin; //国産車、外車
+	
 	private long price; //消費税込み (yen)
 	private int overLength; //overall length 全長(m)
 	private int overWidth; //overall width　全幅(m)
@@ -20,6 +22,13 @@ public class CarRecom {
 	}
 	public void setAutoMaker(String autoMaker) {
 		this.autoMaker = autoMaker;
+	}
+	
+	public String getOrigin() {
+		return origin;
+	}
+	public void setOrigin(String origin) {
+		this.origin = origin;
 	}
 	public long getPrice() {
 		return price;
