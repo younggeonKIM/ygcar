@@ -14,7 +14,7 @@
 <body>
 	<h1>全種類のくるまを見ることができます</h1>
 		<div align="center" class="tbl1">
-			<form:form action="/controller/recom" method="post" modelAttribute="carrecom">
+			<form:form action="" method="post" modelAttribute="carrecom">
 				<table>
 					<tr><th>
 				</table>
