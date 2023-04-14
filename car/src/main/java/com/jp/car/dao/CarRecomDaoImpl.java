@@ -7,16 +7,16 @@ import org.springframework.stereotype.Repository;
 
 import com.jp.car.model.CarRecom;
 
-
+@Repository
 public class CarRecomDaoImpl implements CarRecomDao {
+	public final static List<CarRecom> carList = new ArrayList<CarRecom>();
 	
-	@Override
 	public void addCar(CarRecom cr) {
 		carList.add(cr);
 
 	}
 
-	@Override
+	
 	public CarRecom findCarRecom(CarRecom cr) {
 		CarRecom carFind = new CarRecom();
 		for(int i = 0; i<carList.size(); i++) {
@@ -29,7 +29,7 @@ public class CarRecomDaoImpl implements CarRecomDao {
 		return carFind;
 	}
 
-	@Override
+	
 	public List<String> findAutoNam(CarRecom cr) {
 		List<String> autoNameList = new ArrayList<String>();
 		
@@ -42,7 +42,7 @@ public class CarRecomDaoImpl implements CarRecomDao {
 		return autoNameList;
 	}
 
-	@Override
+	
 	public List<String> findAutoNamByMakr(CarRecom cr) {
 		List<String> autoNameList = new ArrayList<String>();
 		
@@ -55,17 +55,17 @@ public class CarRecomDaoImpl implements CarRecomDao {
 		return autoNameList;
 	}
 
-	@Override
-	public List<String> findAutoMakr(String org) {
-		List<String> autoMakrList = new ArrayList<String>();
+	
+	public List<CarRecom> findAutoList(String org) {
+		List<CarRecom> autoAutoList = new ArrayList<CarRecom>();
 		
 		for(int i = 0 ; i<carList.size(); i++) {
 			if(org.equals(carList.get(i).getOrigin())){
-				autoMakrList.add(carList.get(i).getAutoName());
+				autoAutoList.add(carList.get(i));
 			}
 		}
 		
-		return autoMakrList;
+		return autoAutoList;
 	}
 
 	

@@ -6,9 +6,9 @@ public class CarRecom {
 	private String origin; //国産車、外車
 	
 	private long price; //消費税込み (yen)
-	private int overLength; //overall length 全長(m)
-	private int overWidth; //overall width　全幅(m)
-	private int overHeight; //overall height　全高(m)
+	private double overLength; //overall length 全長(m)
+	private double overWidth; //overall width　全幅(m)
+	private double overHeight; //overall height　全高(m)
 	private int vehWeight; //vehicle weight 車両重量(kg)
 	
 	public String getAutoName() {
@@ -36,22 +36,22 @@ public class CarRecom {
 	public void setPrice(long price) {
 		this.price = price;
 	}
-	public int getOverLength() {
+	public double getOverLength() {
 		return overLength;
 	}
-	public void setOverLength(int overLength) {
+	public void setOverLength(double overLength) {
 		this.overLength = overLength;
 	}
-	public int getOverWidth() {
+	public double getOverWidth() {
 		return overWidth;
 	}
-	public void setOverWidth(int overWidth) {
+	public void setOverWidth(double overWidth) {
 		this.overWidth = overWidth;
 	}
-	public int getOverHeight() {
+	public double getOverHeight() {
 		return overHeight;
 	}
-	public void setOverHeight(int overHeight) {
+	public void setOverHeight(double overHeight) {
 		this.overHeight = overHeight;
 	}
 	public int getVehWeight() {

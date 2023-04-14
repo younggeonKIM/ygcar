@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
@@ -14,11 +15,17 @@
 <body>
 	<h1>全種類のくるまを見ることができます</h1>
 		<div align="center" class="tbl1">
-			<form:form action="" method="post" modelAttribute="carrecom">
+			
 				<table>
-					<tr><th>
+					<tr><th>車名</th><th>製造業者</th><th>製造地</th><th>価格</th>
+						<th>全長</th><th>全幅</th><th>全高</th><th>車両重量</th></tr>
+						<c:forEach items="carNameList" var="lis">
+							<tr><td>${lis.autoName }</td><td>${lis.autoMaker }</td><td>${lis.origin }</td><td>${lis.price }</td>
+								<td>${lis.overLength }</td><td>${lis.overWidth }</td><td>${lis.overHeight }</td><td>${lis.vehWeight }</td></tr>
+						</c:forEach>
+					
 				</table>
-			</form:form>
+			
 			
 		</div>
 </body>
