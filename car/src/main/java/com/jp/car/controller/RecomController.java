@@ -7,17 +7,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class RecomController {
 	
-	
-
-	
 	@RequestMapping(value="/controller/recom", method=RequestMethod.GET)
 	public String recom(Model model) {
 		
 		
 		return "/recommend/carRecom";
 	}
-	
-	
 	
 	@RequestMapping(value="/controller/recom/orign")
 	public String findCarMakrByOrig (String org, Model model) {
