@@ -15,15 +15,15 @@ import com.jp.car.model.CarRecom;
 @Controller
 public class RecomaddController {
 
-	private CarRecom cr;
+//	private CarRecom cr;
+//	
+//	private CarRecomDao crd;
+//	
 	
-	private CarRecomDao crd;
-	
-	
-	@ModelAttribute
-	public void car(Model model) { 
-		model.addAttribute("msg","Welcome to the carInfoSystem!");
-	}
+//	@ModelAttribute
+//	public void car(Model model) { 
+//		model.addAttribute("msg","Welcome to the carInfoSystem!");
+//	}
 	
 	@RequestMapping(value="/controller/recomadd", method=RequestMethod.GET)
 	public String toRecomAdd() {

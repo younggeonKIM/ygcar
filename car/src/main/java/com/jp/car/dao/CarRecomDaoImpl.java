@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.jp.car.model.CarRecom;
 
-@Repository
+
 public class CarRecomDaoImpl implements CarRecomDao {
 	public final static List<CarRecom> carList = new ArrayList<CarRecom>();
 	
