@@ -9,6 +9,9 @@ public class CarRecom {
 	private double overLength; //overall length 全長(m)
 	private double overWidth; //overall width　全幅(m)
 	private double overHeight; //overall height　全高(m)
+	
+	private int totEmission; //総排気量 (cc)
+	
 	private int vehWeight; //vehicle weight 車両重量(kg)
 	
 	public String getAutoName() {
@@ -53,6 +56,13 @@ public class CarRecom {
 	}
 	public void setOverHeight(double overHeight) {
 		this.overHeight = overHeight;
+	}
+	
+	public int getTotEmission() {
+		return totEmission;
+	}
+	public void setTotEmission(int totEmission) {
+		this.totEmission = totEmission;
 	}
 	public int getVehWeight() {
 		return vehWeight;
