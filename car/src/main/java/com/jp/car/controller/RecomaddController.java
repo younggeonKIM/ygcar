@@ -13,6 +13,7 @@ import com.jp.car.dao.CarRecomDao;
 import com.jp.car.dao.CarRecomDaoImpl;
 import com.jp.car.model.CarRecom;
 @Controller
+@RequestMapping(value="/controller")
 public class RecomaddController {
 
 //	private CarRecom cr;
@@ -25,21 +26,22 @@ public class RecomaddController {
 //		model.addAttribute("msg","Welcome to the carInfoSystem!");
 //	}
 	
-	@RequestMapping(value="/controller/recomadd", method=RequestMethod.GET)
-	public String toRecomAdd() {
-		
-		
+	@RequestMapping(value="/recomadd", method=RequestMethod.GET)
+	public String toRecomAdd(Model model) {
+		CarRecom cr = new CarRecom();
+		model.addAttribute("carRecom", cr);
 		return "/recommend/carRecomAdd";
 	}
 	
 	
-	@RequestMapping(value="/controller/recomadd/addexe", method=RequestMethod.POST)
+	@RequestMapping(value="/recomadd/addexe", method=RequestMethod.POST)
 	public String recomCarAdd(@ModelAttribute ("cr") CarRecom cr, BindingResult br, Model model) {
 		if(br.hasErrors()) {
 			return "error";
 		}
-		
-		
+		CarRecomDaoImpl crdi = new CarRecomDaoImpl();
+		crdi.addCar(cr);
+		model.addAttribute("addedCarRecom", crdi.carList);
 		
 		return "/recommend/carRecomAdd_Res";
 	}

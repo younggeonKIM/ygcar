@@ -17,7 +17,7 @@ public class CarRecomDaoImpl implements CarRecomDao {
 	}
 
 	
-	public CarRecom findCarRecom(CarRecom cr) {
+	public CarRecom findCarRecom(CarRecom cr) { //　詳細情報の検索
 		CarRecom carFind = new CarRecom();
 		for(int i = 0; i<carList.size(); i++) {
 			if(cr.getAutoName().equals(carList.get(i).getAutoName()) && 
