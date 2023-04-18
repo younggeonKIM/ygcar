@@ -31,7 +31,7 @@
 	
 	
 	<!-- MyBatisのMapperオブジェクトの生成 -->
-	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<!-- <beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<beans:property name="dataSource" ref="dataSource" />
 		<beans:property name="mapperLocations" value="classpath*:com/MyBatisConfig.xml"/>	
 	</beans:bean>
@@ -39,7 +39,7 @@
 		<beans:property name="mapperInterface" value="com.jp.car.mapper.CarRecomMapper"/>
 		<beans:property name="sqlSessionFactory" ref="sqlSessionFactory"/>
 	
-	</beans:bean> 
+	</beans:bean>  -->
 	
 	
 	

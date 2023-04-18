@@ -6,30 +6,40 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<!-- <context:component-scan base-package="com.jp.car" /> -->
 		<!-- mybatis SqlSessionFactoryBean -->
+    
+    
+    
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+        <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+        <property name="username" value="hr" />
+        <property name="password" value="hr" />
+    </bean>
+    
     <bean id="sqlSessionFactory"
         class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"></property>
         <property name="configLocation"
-            value="classpath:/mybatis-config.xml"></property>
+            value="classpath:/MyBatisConfig.xml"></property>
         <property name="mapperLocations"
-            value="classpath:mappers/**/*Mapper.xml"></property>
+            value="classpath:mapper/**/*Mapper.xml"></property>
     </bean>
 
-    <!-- memberMapper -->
-    <bean id="memberMapper"
+    <!-- carRecomMapper -->
+    <bean id="carRecomMapper"
         class="org.mybatis.spring.mapper.MapperFactoryBean">
         <property name="mapperInterface"
-            value="com.dreamhanks.dao.MemberMapper" />
+            value="com.jp.car.CarRecomMapper" />
         <property name="sqlSessionFactory" ref="sqlSessionFactory" />
     </bean>
 
     <!-- worktimeMapper -->
-    <bean id="worktimeMapper"
+    <!-- <bean id="worktimeMapper"
         class="org.mybatis.spring.mapper.MapperFactoryBean">
         <property name="mapperInterface"
             value="com.dreamhanks.dao.WorktimeMapper" />
         <property name="sqlSessionFactory" ref="sqlSessionFactory" />
-    </bean>
+    </bean> -->
 
     <!-- mybatis -->
     <bean id="sqlSession"
@@ -37,5 +47,9 @@
         destroy-method="clearCache">
         <constructor-arg name="sqlSessionFactory"
             ref="sqlSessionFactory"></constructor-arg>
+    </bean>
+    
+    <bean id="carRecomDao" class="com.jp.car.dao.CarRecomDao">
+    	<property name="dataSource" ref="dataSource"></property>
     </bean>
 </beans>

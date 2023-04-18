@@ -41,7 +41,9 @@ public class RecomaddController {
 		}
 		CarRecomDaoImpl crdi = new CarRecomDaoImpl();
 		crdi.addCar(cr);
-		model.addAttribute("addedCarRecom", crdi.carList);
+		
+		
+		model.addAttribute("addedCarRecom", crdi.findCarRecom(cr));
 		
 		return "/recommend/carRecomAdd_Res";
 	}

@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE configuration PUBLIC 
-"-//mybatis.org//DTD Config 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-config.dtd">
-<configuration>
-	<mappers>
-		<mapper resource="mapper/myhome.xml"/>
-	</mappers>
-</configuration>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper>
+	<select id="getCarList" parameterType="model.CarRecom" resultType="model.CarRecom">
+		select autoName, autoMaker, origin, price, overLength, overWidth, overHeight, totEmission,
+		vehWeight from carRecom_tbl where origin = #{origin}
+	</select>
+	<insert id="putCarList" parameterType="model.CarRecom">
+		insert into carRecom_tbl values(#{autoName}, #{autoMaker}, #{origin}, #{price}, 
+										#{overLength}, #{overWidth}, #{overHeight}, #{totEmission}, #{vehWeight})
+	</insert>
+</mapper>

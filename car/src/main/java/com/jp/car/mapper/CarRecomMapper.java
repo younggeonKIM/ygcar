@@ -1,6 +1,19 @@
 package com.jp.car.mapper;
 
+import java.util.List;
+
+
+import com.jp.car.model.CarRecom;
+
+
+
 public interface CarRecomMapper {
+	public List<CarRecom> getAllCar();
+	
+	
+	
+	
+	
 	/*
 	 * <select id="getCarList" parameterType="model.CarRecom"
 	 * resultType="model.CarRecom"> select autoName, autoMaker, origin, price,
