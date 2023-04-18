@@ -3,12 +3,12 @@ package com.jp.car.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
-
 import com.jp.car.model.CarRecom;
 
 
 public class CarRecomDaoImpl implements CarRecomDao {
+//	private sqlSession session;
+	
 	public final static List<CarRecom> carList = new ArrayList<CarRecom>();
 	
 	public void addCar(CarRecom cr) {

@@ -4,5 +4,38 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-		
+	<!-- <context:component-scan base-package="com.jp.car" /> -->
+		<!-- mybatis SqlSessionFactoryBean -->
+    <bean id="sqlSessionFactory"
+        class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="configLocation"
+            value="classpath:/mybatis-config.xml"></property>
+        <property name="mapperLocations"
+            value="classpath:mappers/**/*Mapper.xml"></property>
+    </bean>
+
+    <!-- memberMapper -->
+    <bean id="memberMapper"
+        class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface"
+            value="com.dreamhanks.dao.MemberMapper" />
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>
+
+    <!-- worktimeMapper -->
+    <bean id="worktimeMapper"
+        class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface"
+            value="com.dreamhanks.dao.WorktimeMapper" />
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>
+
+    <!-- mybatis -->
+    <bean id="sqlSession"
+        class="org.mybatis.spring.SqlSessionTemplate"
+        destroy-method="clearCache">
+        <constructor-arg name="sqlSessionFactory"
+            ref="sqlSessionFactory"></constructor-arg>
+    </bean>
 </beans>
