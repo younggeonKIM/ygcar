@@ -27,7 +27,7 @@
         <beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
         <beans:property name="username" value="hr" />
         <beans:property name="password" value="hr" />
-    </beans:bean> -->
+    </beans:bean>  -->
 	
 	
 	<!-- MyBatisのMapperオブジェクトの生成 -->
@@ -39,9 +39,43 @@
 		<beans:property name="mapperInterface" value="com.jp.car.mapper.CarRecomMapper"/>
 		<beans:property name="sqlSessionFactory" ref="sqlSessionFactory"/>
 	
-	</beans:bean>  -->
+	</beans:bean>   -->
 	
+	 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="oracle.jdbc.OracleDriver" />
+        <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+        <property name="username" value="hr" />
+        <property name="password" value="hr" />
+    </bean>
+    
+    <bean id="sqlSessionFactory"
+        class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="configLocation"
+            value="classpath:/MyBatisConfig.xml"></property>
+        <property name="mapperLocations"
+            value="classpath:mapper/**/*Mapper.xml"></property>
+    </bean>
+
+    <!-- carRecomMapper -->
+    <bean id="carRecomMapper"
+        class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface"
+            value="com.jp.car.CarRecomMapper" />
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>
 	
+	<!-- mybatis -->
+    <bean id="sqlSession"
+        class="org.mybatis.spring.SqlSessionTemplate"
+        destroy-method="clearCache">
+        <constructor-arg name="sqlSessionFactory"
+            ref="sqlSessionFactory"></constructor-arg>
+    </bean>
+    
+    <bean id="carRecomDao" class="com.jp.car.dao.CarRecomDao">
+    	
+    </bean>
 	
 	
 	<context:component-scan base-package="com.jp.car" />

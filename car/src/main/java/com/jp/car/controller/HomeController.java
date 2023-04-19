@@ -26,6 +26,12 @@ public class HomeController {
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
+//		String reqName = "oracle.jdbc.OracleDriver";
+//		reqName = reqName.replace('.', '/').trim();
+//		reqName = "/" + reqName + ".class";
+//		java.net.URL classUrl = this.getClass().getResource(reqName);
+//		System.out.println(classUrl.getFile());
+		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		
