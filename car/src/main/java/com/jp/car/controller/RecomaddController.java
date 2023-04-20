@@ -1,13 +1,14 @@
 package com.jp.car.controller;
 
 
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.jp.car.dao.CarRecomDao;
 import com.jp.car.dao.CarRecomDaoImpl;
@@ -16,15 +17,15 @@ import com.jp.car.model.CarRecom;
 @RequestMapping(value="/controller")
 public class RecomaddController {
 
-//	private CarRecom cr;
-//	
-//	private CarRecomDao crd;
-//	
 	
-//	@ModelAttribute
-//	public void car(Model model) { 
-//		model.addAttribute("msg","Welcome to the carInfoSystem!");
-//	}
+	
+	@Autowired
+	private CarRecomDao crd;	
+	
+	@ModelAttribute
+	public CarRecom car() { 
+		return new CarRecom();
+	}
 	
 	@RequestMapping(value="/recomadd", method=RequestMethod.GET)
 	public String toRecomAdd(Model model) {
@@ -39,11 +40,13 @@ public class RecomaddController {
 		if(br.hasErrors()) {
 			return "error";
 		}
-		CarRecomDaoImpl crdi = new CarRecomDaoImpl();
-		crdi.addCar(cr);
 		
 		
-		model.addAttribute("addedCarRecom", crdi.findCarRecom(cr));
+		this.crd.addCar(cr);
+		
+		CarRecom acr = this.crd.findCarRecom(cr);
+		
+		model.addAttribute("addedCarRecom", acr);
 		
 		return "/recommend/carRecomAdd_Res";
 	}

@@ -19,14 +19,14 @@ public class CarRecomDaoImpl implements CarRecomDao {
 	private static final String NAMESPACE = "com.jp.car.mappers.carrecomMapper";
 	@Override
 	public void addCar(CarRecom cr) {
-		sess.insert(NAMESPACE, cr);
+		sess.insert(NAMESPACE+".putCarList", cr);
 		
 	}
 
 	@Override
 	public CarRecom findCarRecom(CarRecom cr) {
 		
-		return sess.selectOne(NAMESPACE, cr);
+		return sess.selectOne(NAMESPACE+".getCarByANAM", cr);
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class CarRecomDaoImpl implements CarRecomDao {
 
 	@Override
 	public List<CarRecom> findAutoList(String origin) {
-		return sess.selectList(NAMESPACE, origin);
+		return sess.selectList(NAMESPACE+".getCarListByOrg", origin);
 	}
 //	private sqlSession session;
 	

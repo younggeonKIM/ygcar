@@ -19,11 +19,11 @@
 				<tr><th>車名</th><th>製造業者</th>	<th>製造地</th><th>価格</th>
 					<th>全長</th><th>全幅</th><th>全高</th>
 					<th>総排気量</th><th>車両重量</th></tr>
-			<c:forEach items="${addedCarRecom }" var="lis">
-				<tr><td>${lis.autoName }</td><td>${lis.autoMaker }</td><td>${lis.origin }</td><td>${lis.price }</td>
-					<td>${lis.overLength }</td><td>${lis.overWidth }</td><td>${lis.overHeight }</td>
-					<td>${lis.totEmission }</td><td>${lis.vehWeight }</td></tr>
-			</c:forEach>
+			
+				<tr><td>${addedCarRecom.autoName }</td><td>${addedCarRecom.autoMaker }</td><td>${addedCarRecom.origin }</td><td>${addedCarRecom.price }</td>
+					<td>${addedCarRecom.overLength }</td><td>${addedCarRecom.overWidth }</td><td>${addedCarRecom.overHeight }</td>
+					<td>${addedCarRecom.totEmission }</td><td>${addedCarRecom.vehWeight }</td></tr>
+			
 		</table>
 	</div>
 </body>
