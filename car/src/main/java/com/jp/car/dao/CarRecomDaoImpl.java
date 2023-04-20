@@ -6,24 +6,27 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.jp.car.model.CarRecom;
 
-
+@Repository
 public class CarRecomDaoImpl implements CarRecomDao {
 	public final static List<CarRecom> carList = new ArrayList<CarRecom>();
 	@Autowired
 	private SqlSession sess;
+	
+	private static final String NAMESPACE = "com.jp.car.mappers.carrecomMapper";
 	@Override
 	public void addCar(CarRecom cr) {
-		sess.insert("mapper.carRecom.putCarList", cr);
+		sess.insert(NAMESPACE, cr);
 		
 	}
 
 	@Override
 	public CarRecom findCarRecom(CarRecom cr) {
 		
-		return sess.selectOne("mapper.carRecom.getCarRecom", cr);
+		return sess.selectOne(NAMESPACE, cr);
 	}
 
 	@Override
@@ -40,7 +43,7 @@ public class CarRecomDaoImpl implements CarRecomDao {
 
 	@Override
 	public List<CarRecom> findAutoList(String origin) {
-		return sess.selectList("mapper.carRecom.findCaLiByOrig", origin);
+		return sess.selectList(NAMESPACE, origin);
 	}
 //	private sqlSession session;
 	

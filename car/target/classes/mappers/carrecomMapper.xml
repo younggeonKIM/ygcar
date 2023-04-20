@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC 
 "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mapper.myhome">
+<mapper namespace="com.jp.car.mappers.carrecomMapper">
 	
-	<select id="getCarList" parameterType="model.CarRecom" resultType="model.CarRecom">
+	<select id="getCarList" parameterType="com.jp.car.model.CarRecom" resultType="com.jp.car.model.CarRecom">
 		select autoName, autoMaker, origin, price, overLength, overWidth, overHeight, totEmission,
 		vehWeight from carRecom_tbl where origin = #{origin}
 	</select>

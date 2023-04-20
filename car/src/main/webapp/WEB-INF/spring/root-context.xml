@@ -20,36 +20,20 @@
         class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"></property>
         <property name="configLocation"
-            value="classpath:/MyBatisConfig.xml"></property>
+            value="classpath:/mybatis_config.xml"></property>
         <property name="mapperLocations"
-            value="classpath:mapper/**/*Mapper.xml"></property>
+            value="classpath:/mappers/*Mapper.xml"></property>
     </bean>
-
-    <!-- carRecomMapper -->
-    <bean id="carRecomMapper"
-        class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name="mapperInterface"
-            value="com.jp.car.CarRecomMapper" />
-        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
-    </bean>
-
-    <!-- worktimeMapper -->
-    <!-- <bean id="worktimeMapper"
-        class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name="mapperInterface"
-            value="com.dreamhanks.dao.WorktimeMapper" />
-        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
-    </bean> -->
-
-    <!-- mybatis -->
-    <bean id="sqlSession"
+    
+	<bean id="sqlSession"
         class="org.mybatis.spring.SqlSessionTemplate"
         destroy-method="clearCache">
         <constructor-arg name="sqlSessionFactory"
             ref="sqlSessionFactory"></constructor-arg>
     </bean>
     
-    <bean id="carRecomDao" class="com.jp.car.dao.CarRecomDao">
-    	
-    </bean>
+
+    
+    
+    
 </beans>
